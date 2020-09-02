@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Profile from './components/profile';
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,7 +21,9 @@ function App() {
             </header>
           </div>
         </Route>
-        <Route path="/profile">Profile</Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
       </Switch>
     </Router>
   );
