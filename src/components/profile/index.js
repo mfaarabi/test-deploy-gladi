@@ -1,19 +1,15 @@
 import React from 'react';
 
-const Profile = ({ username, postCount }) => (
-  <>
-    <h1>Profile of {username}</h1>
-    <h2>{postCount} Posts</h2>
-  </>
-);
+const Profile = () => {
+  const username = 'Dave';
+  const postCount = 0;
 
-Profile.propTypes = {
-  username: String.required,
-  postCount: Number
-};
-
-Profile.defaultProps = {
-  postCount: 0
+  return (
+    <>
+      <h1>Profile of {username}</h1>
+      <h2>{postCount} Posts</h2>
+    </>
+  );
 };
 
 export default Profile;
