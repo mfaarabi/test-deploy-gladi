@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Profile = props => <h1>Profile of {props.username}</h1>;
+const Profile = props => {
+  const { username } = props;
+  return <h1>Profile of {username}</h1>;
+};
 
 Profile.propTypes = {
   username: String
