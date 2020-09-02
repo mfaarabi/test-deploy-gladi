@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 
+const Post = ({ src }) => (
+  <img style={{ width: '300px', height: '300px' }} alt="post" src={src} />
+);
+
 const Profile = () => {
   const username = 'Dave';
-  const postCount = 0;
+  const postCount = 5;
   const [isFollowed, setIsFollowed] = useState(false);
 
   return (
@@ -16,6 +20,10 @@ const Profile = () => {
       >
         {isFollowed ? 'Unfollow' : 'Follow'}
       </button>
+      <br />
+      {[...Array(postCount)].map((_, idx) => (
+        <Post src="https://via.placeholder.com/300" key={idx} />
+      ))}
     </>
   );
 };
