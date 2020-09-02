@@ -20,10 +20,16 @@ const Profile = () => {
       >
         {isFollowed ? 'Unfollow' : 'Follow'}
       </button>
-      <br />
-      {[...Array(postCount)].map((_, idx) => (
-        <Post src="https://via.placeholder.com/300" key={idx} />
-      ))}
+      {postCount === 0 ? (
+        <div>no posts</div>
+      ) : (
+        <>
+          <br />
+          {[...Array(postCount)].map((_, idx) => (
+            <Post src="https://via.placeholder.com/300" key={idx} />
+          ))}
+        </>
+      )}
     </>
   );
 };
