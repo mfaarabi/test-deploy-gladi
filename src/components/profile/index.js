@@ -8,18 +8,21 @@ const Profile = () => {
   const username = 'Dave';
   const postCount = 5;
   const [isFollowed, setIsFollowed] = useState(false);
+  const auth = false;
 
   return (
     <>
       <h1>Profile of {username}</h1>
       <h2>{postCount} Posts</h2>
-      <button
-        onClick={() => {
-          setIsFollowed(!isFollowed);
-        }}
-      >
-        {isFollowed ? 'Unfollow' : 'Follow'}
-      </button>
+      {auth || (
+        <button
+          onClick={() => {
+            setIsFollowed(!isFollowed);
+          }}
+        >
+          {isFollowed ? 'Unfollow' : 'Follow'}
+        </button>
+      )}
       {postCount === 0 ? (
         <div>no posts</div>
       ) : (
