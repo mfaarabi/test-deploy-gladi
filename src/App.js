@@ -22,7 +22,7 @@ function App() {
           </div>
         </Route>
         <Route path="/profile">
-          <Profile />
+          <Profile username="Dave"/>
         </Route>
       </Switch>
     </Router>

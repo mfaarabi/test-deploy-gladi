@@ -1,5 +1,9 @@
 import React from 'react';
 
-const Profile = () => <h1>My Profile</h1>;
+const Profile = props => <h1>Profile of {props.username}</h1>;
+
+Profile.propTypes = {
+  username: String
+};
 
 export default Profile;
