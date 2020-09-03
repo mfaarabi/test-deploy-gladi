@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './styles.module.css';
 
 const Post = ({ src }) => (
   <img style={{ width: '300px', height: '300px' }} alt="post" src={src} />
@@ -12,31 +13,32 @@ const Profile = () => {
   const auth = true;
 
   return (
-    <>
-      <h1>Profile of {username}</h1>
-      <h2>{postCount} Posts</h2>
-      {auth ? (
-        <Link to="/profile/edit">Edit Profile</Link>
-      ) : (
-        <button
-          onClick={() => {
-            setIsFollowed(!isFollowed);
-          }}
-        >
-          {isFollowed ? 'Unfollow' : 'Follow'}
-        </button>
-      )}
+    <div className={styles.main}>
+      <div>
+        <h1>Profile of {username}</h1>
+        <h2>{postCount} Posts</h2>
+        {auth ? (
+          <Link to="/profile/edit">Edit Profile</Link>
+        ) : (
+          <button
+            onClick={() => {
+              setIsFollowed(!isFollowed);
+            }}
+          >
+            {isFollowed ? 'Unfollow' : 'Follow'}
+          </button>
+        )}
+      </div>
       {postCount === 0 ? (
         <div>no posts</div>
       ) : (
-        <>
-          <br />
+        <div className={styles.posts}>
           {[...Array(postCount)].map((_, idx) => (
             <Post src="https://via.placeholder.com/300" key={idx} />
           ))}
-        </>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
