@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 
-const Post = ({ src }) => (
-  <img style={{ width: '300px', height: '300px' }} alt="post" src={src} />
-);
+const Post = ({ src }) => <img className={styles.post} alt="post" src={src} />;
 
 const Profile = () => {
   const username = 'Dave';
