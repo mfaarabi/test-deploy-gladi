@@ -23,3 +23,18 @@
   width: var(--post);
   height: var(--post);
 }
+
+.profile {
+  display: grid;
+  grid-template-columns: var(--post) 2fr;
+  gap: 5px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.profilePictureImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: auto;
+}

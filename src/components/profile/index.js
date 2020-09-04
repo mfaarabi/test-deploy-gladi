@@ -5,27 +5,36 @@ import styles from './styles.module.css';
 const Post = ({ src }) => <img className={styles.post} alt="post" src={src} />;
 
 const Profile = () => {
-  const username = 'Dave';
+  const username = 'dave';
   const postCount = 5;
   const [isFollowed, setIsFollowed] = useState(false);
   const auth = true;
 
   return (
     <div className={styles.main}>
-      <div>
-        <h1>Profile of {username}</h1>
-        <h2>{postCount} Posts</h2>
-        {auth ? (
-          <Link to="/profile/edit">Edit Profile</Link>
-        ) : (
-          <button
-            onClick={() => {
-              setIsFollowed(!isFollowed);
-            }}
-          >
-            {isFollowed ? 'Unfollow' : 'Follow'}
-          </button>
-        )}
+      <div className={styles.profile}>
+        <div>
+          <img
+            className={styles.profilePictureImg}
+            src="https://bit.ly/dan-abramov"
+            alt="Dan Abramov"
+          />
+        </div>
+        <div>
+          <h1>@{username}</h1>
+          <h2>{postCount} Posts</h2>
+          {auth ? (
+            <Link to="/profile/edit">Edit Profile</Link>
+          ) : (
+            <button
+              onClick={() => {
+                setIsFollowed(!isFollowed);
+              }}
+            >
+              {isFollowed ? 'Unfollow' : 'Follow'}
+            </button>
+          )}
+        </div>
       </div>
       {postCount === 0 ? (
         <div>no posts</div>
