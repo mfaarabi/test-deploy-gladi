@@ -23,7 +23,11 @@ const Profile = () => {
           </div>
           <div>
             <h1>@{username}</h1>
-            <h2>{postCount} Posts</h2>
+            <div className={styles.countsRow}>
+              <h2>{postCount} Posts</h2>
+              <h2>0 Following</h2>
+              <h2>0 Followers</h2>
+            </div>
             {auth ? (
               <Link to="/profile/edit">Edit Profile</Link>
             ) : (

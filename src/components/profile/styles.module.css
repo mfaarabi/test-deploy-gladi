@@ -44,3 +44,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.countsRow {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 20px;
+}
